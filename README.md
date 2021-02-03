@@ -14,14 +14,18 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## accomplised
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Authentication 
+- [x] handle user authentication [ basic auth with user and password ]
+- [x] manage session authentication [ store access and refresh token ]
+- [x] intercept all http requests to api and inject `access-token` to the `Authorization` header
+- [x] handle user logging out by clearing cache and redirect to login page
+- [ ] add auth guard to all endpoints - now httpinterceptor will handle it but need guard which is not 100% correct
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Products
+- [x] List all products view 
+- [x] view a product details on click
+- [x] create new product
+- [ ] delete product functionality - button exist with no action
+- [ ] apply pagination on listing
