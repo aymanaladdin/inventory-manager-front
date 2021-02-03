@@ -1,0 +1,35 @@
+<form [formGroup]="productForm">
+  <div class="product-details">
+    <mat-card>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name" />
+        <mat-error *ngIf="productControls.name.hasError('required')">Please provide product name</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <input type="text" matInput placeholder="Category" formControlName="category" />
+        <mat-error *ngIf="productControls.category.hasError('required')">Please provide product phone</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="description" formControlName="description"></textarea>
+        <mat-error *ngIf="productControls.description.hasError('required')">Please provide product email</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input type="number" matInput placeholder="Price" formControlName="price" />
+        <mat-error *ngIf="productControls.price.hasError('required')">Please select product store type</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Quantity</mat-label>
+        <input type="number" matInput placeholder="Quantity" formControlName="quantity" />
+        <mat-error *ngIf="productControls.quantity.hasError('required')">Please select product store type</mat-error>
+      </mat-form-field>
+      <button class="create-product-btn" mat-fab color="accent" [disabled]="productForm.invalid"
+        (click)="createProduct()">
+        <mat-icon>save</mat-icon>
+      </button>
+    </mat-card>
+  </div>
+</form>

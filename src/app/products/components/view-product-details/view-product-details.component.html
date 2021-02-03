@@ -1,0 +1,45 @@
+<mat-card>
+  <div>
+    <h4>Product Details</h4>
+  </div>
+  <div class="details-container">
+    <div class="Product-data">
+      <div class="row-data">
+        <div class="key">Product Key: </div>
+        <div class="value">{{product?.key}}</div>
+      </div>
+      <div class="row-data">
+        <div class="key">Product Name: </div>
+        <div class="value">{{product?.name}}</div>
+      </div>
+      <div class="row-data">
+        <div class="key">Product Category: </div>
+        <div class="value">{{product?.category}}</div>
+      </div>
+      <div class="row-data">
+        <div class="key">Product Price: </div>
+        <div class="value">{{product?.price | currency}}</div>
+      </div>
+      <div class="row-data">
+        <div class="key">Product Quantity: </div>
+        <div class="value">{{product?.quantity }}</div>
+      </div>
+      <div class="row-data">
+        <div class="key">Product Description: </div>
+        <div class="value">{{product?.description}}</div>
+      </div>
+      <div class="row-data">
+        <div class="key">Creation Date: </div>
+        <div class="value">{{formatDate(product?.createdAt)}}
+          <span class="time-ago">{{timeAgo(product?.createdAt)}}</span>
+        </div>
+      </div>
+      <div class="row-data">
+        <div class="key">Updating Date: </div>
+        <div class="value">{{formatDate(product?.updatedAt)}}
+          <span class="time-ago">{{timeAgo(product?.updatedAt)}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
