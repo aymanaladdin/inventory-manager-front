@@ -1,0 +1,30 @@
+<div class="login-container">
+  <h3>Login to Inventory Manager</h3>
+  <mat-card class="login-card">
+    <div class="form-container">
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Your Username" formControlName="username" />
+          <mat-error *ngIf="loginForm.get('username')?.hasError('required')">Username is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Your Password"
+            formControlName="password" />
+
+          <button type="button" matSuffix mat-icon-button color="primary" (click)="hidePassword = !hidePassword">
+            <mat-icon>{{
+              hidePassword ? "visibility_off" : "visibility"
+              }}</mat-icon>
+          </button>
+
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+        <div class="form-actions">
+          <app-action-button [loading]="loading" [disabled]="loginForm.invalid" [color]="'primary'">Login
+          </app-action-button>
+          <!-- <a routerLink="reset-password">Forgot your password?</a> -->
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</div>
